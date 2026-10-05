@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071321" />
+    <meta
+      name="description"
+      content="Portofolio Emilio Sinji — mahasiswa Informatika Universitas Gunadarma, tertarik pada data science dan kecerdasan buatan."
+    />
+    <meta property="og:title" content="Emilio Sinji — Portofolio" />
+    <meta
+      property="og:description"
+      content="Mengeksplorasi data, membangun solusi, dan terus belajar."
+    />
+    <meta property="og:type" content="website" />
+    <title>Emilio Sinji — Portofolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/effects.css" />
+  </head>
+  <body>
+    <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+
+    <header class="site-header" id="site-header">
+      <nav class="nav-shell" aria-label="Navigasi utama">
+        <a class="brand" href="#home" aria-label="Emilio Sinji, ke beranda">
+          <span class="brand-mark">ES<span>.</span></span>
+        </a>
+        <div class="desktop-nav" id="desktop-nav"></div>
+        <a class="nav-contact" href="#contact">
+          Hubungi saya <span aria-hidden="true">↗</span>
+        </a>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-top">
+        <a class="brand" href="#home">
+          <span class="brand-mark">ES<span>.</span></span>
+        </a>
+        <button
+          class="menu-close"
+          id="menu-close"
+          type="button"
+          aria-label="Tutup menu"
+        >
+          ×
+        </button>
+      </div>
+      <div class="mobile-nav-links" id="mobile-nav-links"></div>
+      <p class="menu-note">Belajar hari ini. Membangun untuk esok.</p>
+    </div>
+
+    <main>
+      <section class="hero section-wrap" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">
+            <span class="status-dot"></span> PORTOFOLIO · 2026
+          </p>
+          <p class="hero-intro">Halo, saya</p>
+          <h1>Emilio <span>Sinji</span><i class="hero-period">.</i></h1>
+          <div class="role-line">
+            <span class="role-prefix">Saya seorang</span>
+            <span class="role-text" id="role-text">AI Engineer Enthusiast</span>
+            <span class="typing-caret" aria-hidden="true"></span>
+          </div>
+          <p class="hero-description">
+            Mahasiswa Informatika di Universitas Gunadarma yang tertarik pada
+            <strong>Data Science</strong> dan
+            <strong>Artificial Intelligence</strong>. Saat ini saya sedang
+            belajar, bereksperimen, dan membangun hal-hal yang berguna.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">
+              <img
+                src="https://api.iconify.design/lucide/compass.svg?color=%23071321"
+                alt=""
+                width="17"
+                height="17"
+                onerror="this.style.display='none'"
+              />
+              Explore My Portfolio <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button button-outline"
+              href="https://drive.google.com/file/d/19fWxcSgXWQlUh2KfP4K0NAkbRknShnxA/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://api.iconify.design/lucide/download.svg?color=%2383DDF5"
+                alt=""
+                width="17"
+                height="17"
+                onerror="this.style.display='none'"
+              />
+              Unduh CV <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="hero-foot">
+            <span>INFORMATIKA · GUNADARMA</span>
+            <span>06°10' S — 106°50' E</span>
+          </div>
+        </div>
+        <div class="hero-portrait reveal" aria-label="Foto Emilio Sinji">
+          <div class="portrait-index">FIG. 01 <span>— EMILIO SINJI</span></div>
+          <img
+            src="./assets/images/foto%20saya.jpeg"
+            alt="Emilio Sinji, mahasiswa Informatika"
+          />
+          <div class="portrait-caption">
+            <span>Mahasiswa Informatika</span>
+            <span>Depok, Indonesia</span>
+          </div>
+          <span class="portrait-coordinate" aria-hidden="true">ES / 2026</span>
+        </div>
+        <a class="scroll-cue" href="#skills">
+          <!--<span class="scroll-text">GULIR UNTUK MENJELAJAH</span> -->
+        </a>
+      </section>
+
+      <section class="section-wrap section-block skills-section" id="skills">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">01 / SKILLS</p>
+            <h2>Tools of the <em>coding.</em></h2>
+          </div>
+          <p class="heading-aside">
+            Rasa ingin tahu adalah alat pertama.<br />Ini yang membantu saya
+            menerjemahkannya.
+          </p>
+        </div>
+        <div class="skill-groups" id="skill-groups"></div>
+      </section>
+
+      <section
+        class="section-wrap section-block experience-section"
+        id="experience"
+      >
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">02 / PENGALAMAN</p>
+            <h2>Belajar sambil <em>berbagi.</em></h2>
+          </div>
+          <span class="section-index">Maret 2026 - Mei 2026</span>
+        </div>
+        <details class="experience-details reveal">
+          <summary class="experience-card">
+            <span class="experience-logo">
+              <img
+                src="./assets/images/logo%20hpc%20ug.jpeg"
+                alt="Logo HPC Universitas Gunadarma"
+              />
+            </span>
+            <span class="experience-main">
+              <span class="eyebrow">UNIVERSITAS GUNADARMA · DEPOK</span>
+              <span class="experience-title">Asisten Laboratorium</span>
+              <span class="experience-role">
+                MK Praktikum Unggulan <span class="accent-text">(DGX)</span>
+              </span>
+            </span>
+            <span class="experience-arrow">
+              <span class="experience-arrow-icon" aria-hidden="true">↓</span>
+            </span>
+          </summary>
+          <div class="experience-details-panel">
+            <ol class="experience-duties" type="a">
+              <li>
+                Menyampaikan materi pengenalan Praktikum Unggulan (DGX) dan demo
+                proyek kepada mahasiswa.
+              </li>
+              <li>
+                Mengembangkan proyek Natural Language Processing (NLP) untuk
+                mengklasifikasikan komentar YouTube sebagai spam judi online
+                (judol) atau bukan spam, serta mempresentasikan hasilnya kepada
+                dosen dan tamu dalam kegiatan Praktikum Unggulan.
+              </li>
+              <li>
+                Menjawab pertanyaan mahasiswa serta memberikan bantuan terkait
+                kendala selama pelaksanaan Praktikum Unggulan.
+              </li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <section
+        class="section-wrap section-block projects-section"
+        id="projects"
+      >
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">03 / PILIHAN KARYA</p>
+            <h2>Projects in <em>progress.</em></h2>
+          </div>
+          <p class="heading-aside">
+            Lima eksperimen kecil, semuanya berangkat<br />dari rasa ingin tahu
+            yang berbeda.
+          </p>
+        </div>
+        <div class="project-list" id="project-list"></div>
+      </section>
+
+      <section class="section-wrap section-block courses-section" id="courses">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">04 / COURSES</p>
+            <h2>Learning, <em>documented.</em></h2>
+          </div>
+          <p class="heading-aside">
+            Sertifikat adalah penanda perjalanan,<br />bukan garis akhir.
+          </p>
+        </div>
+        <div class="course-list" id="course-list"></div>
+      </section>
+
+      <section class="section-wrap section-block contact-section" id="contact">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">05 / CONTACT</p>
+            <h2>Ada ide? <em>Sapa saya.</em></h2>
+          </div>
+          <p class="heading-aside">
+            Kolaborasi, pertanyaan, atau sekadar bertukar<br />cerita tentang
+            data atau apapun.
+          </p>
+        </div>
+        <div class="contact-layout reveal">
+          <div class="contact-aside">
+            <p class="contact-lede">
+              Mari buat sesuatu<br />yang <em>berarti.</em>
+            </p>
+            <p class="contact-small">
+              Tinggalkan pesan. Tombol di bawah akan membuka aplikasi email
+              Anda dengan draf yang sudah terisi pesan tidak dikirim otomatis.
+            </p>
+            <div class="social-block">
+              <p class="eyebrow">TEMUKAN SAYA</p>
+              <div class="social-links" id="social-links"></div>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <label>
+                Nama
+                <input
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Nama Anda"
+                  required
+                  maxlength="100"
+                />
+              </label>
+              <label>
+                Email
+                <input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nama@email.com"
+                  required
+                  maxlength="200"
+                />
+              </label>
+            </div>
+            <label>
+              Pesan
+              <textarea
+                name="message"
+                placeholder="Ceritakan sedikit tentang ide Anda..."
+                rows="6"
+                required
+                maxlength="3000"
+              ></textarea>
+            </label>
+            <div class="form-submit-row">
+              <p class="form-note">
+                Draf email akan dibuat di aplikasi email Anda.
+              </p>
+              <button class="button button-primary" type="submit">
+                Buka draf email <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#home">
+        <span class="brand-mark">ES<span>.</span></span>
+      </a>
+      <p>
+        Dirancang dengan rasa ingin tahu.
+        <span>© <span id="year"></span> Emilio Sinji</span>
+      </p>
+      <a href="#home" class="back-top">KEMBALI KE ATAS ↑</a>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
