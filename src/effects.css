@@ -1,0 +1,251 @@
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.site-header {
+  z-index: 30;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-portrait img {
+  -webkit-clip-path: none;
+  clip-path: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0) scale(.99);
+  transition: opacity .62s cubic-bezier(.2, .7, .2, 1), transform .62s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--stagger, 0ms);
+}
+
+.reveal.is-hidden-above {
+  transform: translate3d(0, -26px, 0) scale(.99);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.experience-details {
+  min-width: 0;
+}
+
+.experience-card {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-card::-webkit-details-marker {
+  display: none;
+}
+
+.experience-main {
+  display: grid;
+}
+
+.experience-title {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.experience-role {
+  color: #91a6b5;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.experience-arrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.experience-expand-label {
+  color: #8ca3b3;
+  font: 9px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.experience-arrow-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(115, 217, 242, .34);
+  border-radius: 50%;
+  transition: transform .3s ease, background .3s ease, border-color .3s ease;
+}
+
+.experience-details[open] .experience-arrow-icon {
+  transform: rotate(180deg);
+}
+
+.experience-details-panel {
+  padding: 23px 28px 24px 125px;
+  background: rgba(9, 24, 39, .88);
+  border: 1px solid var(--line);
+  border-top: 0;
+}
+
+.experience-duties {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 22px;
+  color: #a9bac6;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.experience-duties li {
+  padding-left: 8px;
+}
+
+.experience-duties li::marker {
+  color: var(--cyan);
+  font: 11px var(--mono);
+}
+
+.experience-details[open] .experience-details-panel {
+  animation: details-enter .35s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.button::after {
+  position: absolute;
+  z-index: -1;
+  inset: -70% -120%;
+  content: "";
+  background: linear-gradient(110deg, transparent 45%, rgba(255, 255, 255, .32) 50%, transparent 55%);
+  transform: translateX(-58%) rotate(12deg);
+  transition: transform .65s cubic-bezier(.2, .7, .2, 1);
+  pointer-events: none;
+}
+
+.button span:last-child,
+.nav-contact span {
+  display: inline-block;
+  transition: transform .28s ease;
+}
+
+.experience-card:focus-visible,
+.button:focus-visible,
+.nav-contact:focus-visible,
+.project-visual:focus-visible,
+.certificate:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .button:hover::after,
+  .button:focus-visible::after {
+    transform: translateX(58%) rotate(12deg);
+  }
+
+  .button:hover span:last-child,
+  .nav-contact:hover span {
+    transform: translate(3px, -2px);
+  }
+
+  .skill-group:hover,
+  .experience-details:hover > .experience-card,
+  .experience-details[open] > .experience-card,
+  .project-visual:hover,
+  .course-card:hover,
+  .contact-layout:hover,
+  .contact-layout:focus-within {
+    border-color: rgba(115, 217, 242, .46);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, .24), 0 0 24px rgba(115, 217, 242, .055);
+  }
+
+  .experience-details:not([open]):hover .experience-arrow-icon {
+    transform: translateY(3px);
+  }
+
+  .tool-chip:hover {
+    box-shadow: 0 5px 16px rgba(115, 217, 242, .1);
+  }
+
+  .certificate:hover .certificate-image {
+    border-color: rgba(115, 217, 242, .48);
+    box-shadow: 0 9px 25px rgba(0, 0, 0, .24);
+  }
+}
+
+.experience-card:active,
+.button:active {
+  filter: brightness(1.08);
+}
+
+@keyframes details-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .experience-expand-label {
+    display: none;
+  }
+
+  .experience-arrow {
+    gap: 0;
+  }
+
+  .experience-title {
+    font-size: 16px;
+  }
+
+  .experience-role {
+    font-size: 11px;
+  }
+
+  .experience-details-panel {
+    padding: 18px 17px 20px;
+  }
+
+  .experience-duties {
+    gap: 12px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-details[open] .experience-details-panel {
+    animation: none;
+  }
+}
